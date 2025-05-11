@@ -23,15 +23,15 @@ public class LoginTest extends Base {
 	@Test
 	public void login_Test() throws InterruptedException {
 		LoginPage lPage  =new LoginPage(driver);
-		lPage.login("problem_user", "secret_sauce");
+		lPage.login("standard_user", "secret_sauce");
 		HomePage hPage = new HomePage(driver);
 		hPage.verify_login();
-//		hPage.additemToCart();
-//	
-//		Assert.assertTrue(hPage.isProductAddedToCart(),"productNotAdded");
-//		
-//		hPage.getCartItemCount();
-//		Assert.assertEquals(hPage.getCartItemCount(),"1","productNotAdded");
+		hPage.additemToCart();
+	
+		Assert.assertTrue(hPage.isProductAddedToCart(),"productNotAdded");
+		
+		System.out.println("Total items available in cart: "+hPage.getCartItemCount());hPage.getCartItemCount();
+		Assert.assertEquals(hPage.getCartItemCount(),"6","productNotAdded");
 	}
 
 	
